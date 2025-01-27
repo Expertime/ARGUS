@@ -30,7 +30,7 @@ jobs:
       - name: Build and Push Docker Image        
         env:
           IMAGE_NAME: ${{ secrets.ACR_NAME }}.azurecr.io/argus-frontend
-      - run: |
+        run: |
           docker build -f docker/frontend.Dockerfile -t ${{ secrets.ACR_NAME }}/argus_spa:latest .
           docker push ${{ secrets.ACR_NAME }}/argus_spa:latest
 
